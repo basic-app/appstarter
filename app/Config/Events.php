@@ -1,7 +1,4 @@
-<?php namespace Config;
-
-use CodeIgniter\Events\Events;
-
+<?php
 /*
  * --------------------------------------------------------------------
  * Application Events
@@ -18,15 +15,22 @@ use CodeIgniter\Events\Events;
  * Example:
  *      Events::on('create', [$myInstance, 'myMethod']);
  */
+namespace Config;
 
-Events::on('pre_system', function () {
-	while (\ob_get_level() > 0)
+use CodeIgniter\Events\Events;
+
+Events::on('pre_system', function() {
+
+    require dirname(__DIR__) . '/ThirdParty/bootstrap.php';
+
+	while (ob_get_level() > 0)
 	{
-		\ob_end_flush();
+		ob_end_flush();
 	}
 
-	\ob_start(function ($buffer) {
-		return $buffer;
+	ob_start(function($buffer) {
+		
+        return $buffer;
 	});
 
 	/*
@@ -38,6 +42,7 @@ Events::on('pre_system', function () {
 	if (ENVIRONMENT !== 'production')
 	{
 		Events::on('DBQuery', 'CodeIgniter\Debug\Toolbar\Collectors\Database::collect');
+
 		Services::toolbar()->respond();
 	}
 });
