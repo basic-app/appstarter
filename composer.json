@@ -28,7 +28,7 @@
         "post-update-cmd": [
             "@composer dump-autoload"
         ]
-    }
+    },
     "repositories": [
         {
             "type": "composer",
