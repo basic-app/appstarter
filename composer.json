@@ -21,7 +21,8 @@
         "denis303/php-zip-helper": "dev-master",
         "basic-app/crud": "dev-master",
         "basic-app/module-user-provider": "dev-master",
-        "basic-app/module-user": "dev-master"
+        "basic-app/module-user": "dev-master",
+        "basic-app/module-site": "dev-master"
     },
     "require-dev": {
         "mikey179/vfsstream": "1.6.*",
