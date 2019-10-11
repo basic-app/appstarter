@@ -19,7 +19,9 @@
         "denis303/php-file-helper": "dev-master",
         "denis303/php-download-helper": "dev-master",
         "denis303/php-zip-helper": "dev-master",
-        "basic-app/crud": "dev-master"
+        "basic-app/crud": "dev-master",
+        "basic-app/module-user-provider": "dev-master",
+        "basic-app/module-user": "dev-master"
     },
     "require-dev": {
         "mikey179/vfsstream": "1.6.*",
