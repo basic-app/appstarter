@@ -1,8 +1,8 @@
-<?php namespace Config;
+<?php
 
-use CodeIgniter\Config\BaseConfig;
+namespace Config;
 
-class Filters extends BaseConfig
+class Filters extends \BasicApp\System\Config\BaseFilters
 {
 	// Makes reading things below nicer,
 	// and simpler to change out script that's used.

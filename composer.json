@@ -9,31 +9,38 @@
     "require": {
         "php": ">=7.2",
         "codeigniter4/framework": "*",
-        "basic-app/admin": "*",
-        "basic-app/module-admin-simple": "*",
-        "basic-app/theme-bootstrap4": "*",
-        "basic-app/theme-cool-admin": "*",
-        "basic-app/system": "dev-master",
-        "denis303/codeigniter4-migration": "dev-master",
-        "denis303/codeigniter4-form": "dev-master",
-        "denis303/php-file-helper": "dev-master",
-        "denis303/php-download-helper": "dev-master",
-        "denis303/php-zip-helper": "dev-master",
-        "basic-app/crud": "dev-master"
+        "basic-app/system": "dev-master"
     },
     "require-dev": {
         "mikey179/vfsstream": "1.6.*",
         "phpunit/phpunit": "^7.0"
     },
     "scripts": {
+        "post-create-project-cmd": [
+            "BasicApp\\Core\\Composer::postCreateProject"
+        ],
         "post-update-cmd": [
-            "@composer dump-autoload"
+            "@composer dump-autoload",
+            "BasicApp\\Core\\Composer::postUpdate"
+        ],
+        "post-install-cmd": [
+            "@composer dump-autoload",
+            "BasicApp\\Core\\Composer::postInstall"
         ]
+    },
+    "extra": {
+        "BasicApp\\Core\\Composer::postCreateProject": {
+            "copy": [
+                {
+                    "env": ".env"
+                }
+            ]
+        }
     },
     "repositories": [
         {
             "type": "composer",
             "url": "https://asset-packagist.org"
-        }        
+        }
     ]
 }
