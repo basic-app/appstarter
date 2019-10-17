@@ -9,7 +9,7 @@
     "require": {
         "php": ">=7.2",
         "codeigniter4/framework": "*",
-        "basic-app/system": "dev-master"
+        "basic-app/system": "*"
     },
     "require-dev": {
         "mikey179/vfsstream": "1.6.*",
