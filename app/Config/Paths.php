@@ -1,4 +1,6 @@
-<?php namespace Config;
+<?php
+
+namespace Config;
 
 /**
  * Holds the paths that are used by the system to
@@ -74,4 +76,5 @@ class Paths
 	 * is used when no value is provided to `Services::renderer()`.
 	 */
 	public $viewDirectory = __DIR__ . '/../Views';
+
 }

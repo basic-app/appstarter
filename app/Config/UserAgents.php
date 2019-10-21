@@ -215,4 +215,5 @@ class UserAgents extends BaseConfig
 		'MJ12bot'              => 'Majestic-12',
 		'Uptimebot'            => 'Uptimebot',
 	];
+    
 }

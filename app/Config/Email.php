@@ -2,7 +2,7 @@
 
 namespace Config;
 
-class Email extends \BasicApp\System\Config\BaseEmail
+class Email extends \BasicApp\System\Config\AppEmail
 {
 
 	/**

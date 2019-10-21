@@ -1,4 +1,6 @@
-<?php namespace Config;
+<?php
+
+namespace Config;
 
 // Cannot extend BaseConfig or looping resources occurs.
 class Modules
@@ -64,4 +66,5 @@ class Modules
 
 		return in_array($alias, $this->activeExplorers);
 	}
+
 }

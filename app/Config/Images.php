@@ -1,4 +1,6 @@
-<?php namespace Config;
+<?php
+
+namespace Config;
 
 use CodeIgniter\Config\BaseConfig;
 
@@ -28,4 +30,5 @@ class Images extends BaseConfig
 		'gd'      => \CodeIgniter\Images\Handlers\GDHandler::class,
 		'imagick' => \CodeIgniter\Images\Handlers\ImageMagickHandler::class,
 	];
+
 }

@@ -2,7 +2,7 @@
 
 namespace Config;
 
-class View extends \BasicApp\System\Config\BaseView
+class View extends \BasicApp\System\Config\AppView
 {
 	/**
 	 * When false, the view method will clear the data between each
@@ -33,4 +33,5 @@ class View extends \BasicApp\System\Config\BaseView
 	 * any callable. Can be single or tag pair.
 	 */
 	public $plugins = [];
+	
 }

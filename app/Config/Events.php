@@ -17,9 +17,16 @@
  */
 namespace Config;
 
-use CodeIgniter\Events\Events;
+use BasicApp\System\SystemEvents;
 
-Events::on('pre_system', function() {
+\BasicApp\Admin\AdminEvents::onRegisterAssets(function($event) {
+
+    \BasicApp\TinyMceJs\Assets::register($event->head, $event->beginBody, $event->endBody);
+    \BasicApp\CodeMirrorJs\Assets::register($event->head, $event->beginBody, $event->endBody);
+
+});
+
+SystemEvents::onPreSystem(function() {
 
     require dirname(__DIR__) . '/ThirdParty/bootstrap.php';
 
@@ -41,7 +48,7 @@ Events::on('pre_system', function() {
 	 */
 	if (ENVIRONMENT !== 'production')
 	{
-		Events::on('DBQuery', 'CodeIgniter\Debug\Toolbar\Collectors\Database::collect');
+		\CodeIgniter\Events\Events::on('DBQuery', 'CodeIgniter\Debug\Toolbar\Collectors\Database::collect');
 
 		Services::toolbar()->respond();
 	}

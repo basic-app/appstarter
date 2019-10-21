@@ -2,7 +2,7 @@
 
 namespace Config;
 
-class Pager extends \BasicApp\System\Config\BasePager
+class Pager extends \BasicApp\System\Config\AppPager
 {
 	/*
 	|--------------------------------------------------------------------------
@@ -20,9 +20,7 @@ class Pager extends \BasicApp\System\Config\BasePager
 	public $templates = [
 		'default_full'   => 'CodeIgniter\Pager\Views\default_full',
 		'default_simple' => 'CodeIgniter\Pager\Views\default_simple',
-		'default_head'   => 'CodeIgniter\Pager\Views\default_head',
-        'theme' => 'BasicApp\System\pager',
-        'adminTheme' => 'BasicApp\Admin\pager'
+		'default_head'   => 'CodeIgniter\Pager\Views\default_head'
 	];
 
 	/*

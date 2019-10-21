@@ -1,4 +1,6 @@
-<?php namespace Config;
+<?php
+
+namespace Config;
 
 use CodeIgniter\Config\BaseConfig;
 
@@ -117,4 +119,5 @@ class Cache extends BaseConfig
 		'redis'     => \CodeIgniter\Cache\Handlers\RedisHandler::class,
 		'wincache'  => \CodeIgniter\Cache\Handlers\WincacheHandler::class,
 	];
+
 }

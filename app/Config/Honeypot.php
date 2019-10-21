@@ -1,4 +1,6 @@
-<?php namespace Config;
+<?php
+
+namespace Config;
 
 use CodeIgniter\Config\BaseConfig;
 
@@ -31,4 +33,5 @@ class Honeypot extends BaseConfig
 	 * @var string
 	 */
 	public $template = '<label>{label}</label><input type="text" name="{name}" value=""/>';
+
 }

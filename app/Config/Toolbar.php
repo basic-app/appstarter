@@ -65,4 +65,5 @@ class Toolbar extends BaseConfig
 	|
 	*/
 	public $maxQueries = 100;
+
 }

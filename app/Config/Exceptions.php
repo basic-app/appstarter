@@ -1,4 +1,6 @@
-<?php namespace Config;
+<?php
+
+namespace Config;
 
 /**
  * Setup how the exception handler works.
@@ -38,4 +40,5 @@ class Exceptions
 	| Default: APPPATH.'Views/errors'
 	*/
 	public $errorViewPath = APPPATH . 'Views/errors';
+
 }

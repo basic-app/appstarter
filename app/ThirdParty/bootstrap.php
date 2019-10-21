@@ -1,3 +1,3 @@
 <?php
 
-require __DIR__ . '/basic-app/module-admin-simple/Config/AdminSimple.php';
+require __DIR__ . '/basic-app/admin/Config/Admin.php';
