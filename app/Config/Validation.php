@@ -2,7 +2,7 @@
 
 namespace Config;
 
-class Validation extends \BasicApp\System\Config\AppValidation
+class Validation extends \BasicApp\System\Config\App\BaseValidation
 {
 	//--------------------------------------------------------------------
 	// Setup

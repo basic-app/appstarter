@@ -1,4 +1,6 @@
-<?php namespace Config;
+<?php
+
+namespace Config;
 
 use CodeIgniter\Config\Services as CoreServices;
 use CodeIgniter\Config\BaseConfig;
@@ -30,5 +32,4 @@ class Services extends CoreServices
 	//
 	//        return new \CodeIgniter\Example();
 	//    }
-
 }

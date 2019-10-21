@@ -15,7 +15,7 @@ namespace Config;
 | single extension.
 |
 */
-class Mimes
+class Mimes extends \BasicApp\System\Config\App\BaseMimes
 {
 	/**
 	 * Map of extensions to mime types.

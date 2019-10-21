@@ -2,9 +2,7 @@
 
 namespace Config;
 
-use CodeIgniter\Config\BaseConfig;
-
-class Images extends BaseConfig
+class Images extends \BasicApp\System\Config\App\BaseImages
 {
 	/**
 	 * Default handler used if no other handler is specified.
@@ -30,5 +28,4 @@ class Images extends BaseConfig
 		'gd'      => \CodeIgniter\Images\Handlers\GDHandler::class,
 		'imagick' => \CodeIgniter\Images\Handlers\ImageMagickHandler::class,
 	];
-
 }

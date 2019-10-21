@@ -22,7 +22,7 @@ class Paths
 	 * Include the path if the folder is not in the same directory
 	 * as this file.
 	 */
-	public $systemDirectory = __DIR__ . '/../../vendor/codeigniter4/framework/system';
+    public $systemDirectory = '../vendor/codeigniter4/framework/system';
 
 	/*
 	 *---------------------------------------------------------------
@@ -58,10 +58,6 @@ class Paths
 	 * ---------------------------------------------------------------
 	 *
 	 * This variable must contain the name of your "tests" directory.
-	 * The writable directory allows you to group all directories that
-	 * need write permission to a single place that can be tucked away
-	 * for maximum security, keeping it out of the app and/or
-	 * system directories.
 	 */
 	public $testsDirectory = __DIR__ . '/../../tests';
 
@@ -76,5 +72,4 @@ class Paths
 	 * is used when no value is provided to `Services::renderer()`.
 	 */
 	public $viewDirectory = __DIR__ . '/../Views';
-
 }

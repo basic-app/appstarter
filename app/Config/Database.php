@@ -8,7 +8,7 @@ namespace Config;
  * @package Config
  */
 
-class Database extends \CodeIgniter\Database\Config
+class Database extends \BasicApp\System\Config\App\BaseDatabase
 {
 	/**
 	 * The directory that holds the Migrations

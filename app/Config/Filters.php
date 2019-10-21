@@ -2,7 +2,7 @@
 
 namespace Config;
 
-class Filters extends \BasicApp\System\Config\AppFilters
+class Filters extends \BasicApp\System\Config\App\BaseFilters
 {
 	// Makes reading things below nicer,
 	// and simpler to change out script that's used.
@@ -33,5 +33,4 @@ class Filters extends \BasicApp\System\Config\AppFilters
 	// that they should run on, like:
 	//    'isLoggedIn' => ['before' => ['account/*', 'profiles/*']],
 	public $filters = [];
-
 }

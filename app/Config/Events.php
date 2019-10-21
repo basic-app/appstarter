@@ -1,4 +1,10 @@
 <?php
+
+namespace Config;
+
+use BasicApp\System\SystemEvents;
+use BasicApp\Admin\AdminEvents;
+
 /*
  * --------------------------------------------------------------------
  * Application Events
@@ -15,41 +21,41 @@
  * Example:
  *      Events::on('create', [$myInstance, 'myMethod']);
  */
-namespace Config;
+if (!is_cli())
+{
+    SystemEvents::onPreSystem(function() {
+    	while (ob_get_level() > 0)
+    	{
+    		ob_end_flush();
+    	}
 
-use BasicApp\System\SystemEvents;
+    	ob_start(function ($buffer) {
+    		return $buffer;
+    	});
 
-\BasicApp\Admin\AdminEvents::onRegisterAssets(function($event) {
+    	/*
+    	 * --------------------------------------------------------------------
+    	 * Debug Toolbar Listeners.
+    	 * --------------------------------------------------------------------
+    	 * If you delete, they will no longer be collected.
+    	 */
+    	if (ENVIRONMENT !== 'production')
+    	{
+    		SystemEvents::onDbQuery('CodeIgniter\Debug\Toolbar\Collectors\Database::collect');
+    		Services::toolbar()->respond();
+    	}
+    });
+}
+
+SystemEvents::onPreSystem(function() {
+
+    require APPPATH . 'ThirdParty' . DIRECTORY_SEPARATOR . 'bootstrap.php';
+
+});
+
+AdminEvents::onRegisterAssets(function($event) {
 
     \BasicApp\TinyMceJs\Assets::register($event->head, $event->beginBody, $event->endBody);
     \BasicApp\CodeMirrorJs\Assets::register($event->head, $event->beginBody, $event->endBody);
 
-});
-
-SystemEvents::onPreSystem(function() {
-
-    require dirname(__DIR__) . '/ThirdParty/bootstrap.php';
-
-	while (ob_get_level() > 0)
-	{
-		ob_end_flush();
-	}
-
-	ob_start(function($buffer) {
-		
-        return $buffer;
-	});
-
-	/*
-	 * --------------------------------------------------------------------
-	 * Debug Toolbar Listeners.
-	 * --------------------------------------------------------------------
-	 * If you delete, they will no longer be collected.
-	 */
-	if (ENVIRONMENT !== 'production')
-	{
-		\CodeIgniter\Events\Events::on('DBQuery', 'CodeIgniter\Debug\Toolbar\Collectors\Database::collect');
-
-		Services::toolbar()->respond();
-	}
 });

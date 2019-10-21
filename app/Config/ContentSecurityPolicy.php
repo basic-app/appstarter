@@ -2,8 +2,6 @@
 
 namespace Config;
 
-use CodeIgniter\Config\BaseConfig;
-
 /**
  * Class ContentSecurityPolicyConfig
  *
@@ -16,7 +14,8 @@ use CodeIgniter\Config\BaseConfig;
  *
  * @package Config
  */
-class ContentSecurityPolicy extends BaseConfig
+
+class ContentSecurityPolicy extends \BasicApp\System\Config\App\BaseContentSecurityPolicy
 {
 	// broadbrush CSP management
 

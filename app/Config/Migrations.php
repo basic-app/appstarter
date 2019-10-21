@@ -2,9 +2,7 @@
 
 namespace Config;
 
-use CodeIgniter\Config\BaseConfig;
-
-class Migrations extends BaseConfig
+class Migrations extends \BasicApp\System\Config\App\BaseMigrations
 {
 	/*
 	|--------------------------------------------------------------------------

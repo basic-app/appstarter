@@ -8,7 +8,7 @@ namespace Config;
  * @package Config
  */
 
-class Exceptions
+class Exceptions extends \BasicApp\System\Config\App\BaseExceptions
 {
 	/*
 	 |--------------------------------------------------------------------------
@@ -40,5 +40,4 @@ class Exceptions
 	| Default: APPPATH.'Views/errors'
 	*/
 	public $errorViewPath = APPPATH . 'Views/errors';
-
 }

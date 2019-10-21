@@ -66,5 +66,4 @@ class Modules
 
 		return in_array($alias, $this->activeExplorers);
 	}
-
 }

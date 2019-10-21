@@ -1,8 +1,8 @@
-<?php namespace Config;
+<?php
 
-use CodeIgniter\Config\BaseConfig;
+namespace Config;
 
-class UserAgents extends BaseConfig
+class UserAgents extends \BasicApp\System\Config\App\BaseUserAgents
 {
 	/*
 	| -------------------------------------------------------------------
@@ -215,5 +215,4 @@ class UserAgents extends BaseConfig
 		'MJ12bot'              => 'Majestic-12',
 		'Uptimebot'            => 'Uptimebot',
 	];
-    
 }

@@ -2,9 +2,7 @@
 
 namespace Config;
 
-use CodeIgniter\Config\BaseConfig;
-
-class Logger extends BaseConfig
+class Logger extends \BasicApp\System\Config\App\BaseLogger
 {
 	/*
 	|--------------------------------------------------------------------------
@@ -139,5 +137,4 @@ class Logger extends BaseConfig
 		//                        'error', 'info', 'notice', 'warning'],
 		//      ]
 	];
-
 }
