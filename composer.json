@@ -9,7 +9,12 @@
     "require": {
         "php": ">=7.2",
         "codeigniter4/framework": "*",
-        "basic-app/system": "*"
+        "basic-app/system": "*",
+        "basic-app/admin": "dev-master",
+        "basic-app/module-admin-simple": "dev-master",
+        "basic-app/theme-cool-admin": "dev-master",
+        "basic-app/module-blog": "dev-master",
+        "basic-app/module-site": "dev-master"
     },
     "require-dev": {
         "mikey179/vfsstream": "1.6.*",
