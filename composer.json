@@ -13,7 +13,9 @@
         "basic-app/admin": "*",
         "basic-app/theme-cool-admin": "*",
         "basic-app/theme-clean-blog": "*",
-        "basic-app/module-site": "*"
+        "basic-app/module-site": "*",
+        "basic-app/js-tinymce": "*",
+        "basic-app/js-codemirror": "*"
     },
     "require-dev": {
         "mikey179/vfsstream": "1.6.*",
