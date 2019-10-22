@@ -2,7 +2,9 @@
 
 namespace Config;
 
+use CodeIgniter\Events\Events;
 use BasicApp\System\SystemEvents;
+use BasicApp\Site\SiteEvents;
 use BasicApp\Admin\AdminEvents;
 
 /*
@@ -23,7 +25,8 @@ use BasicApp\Admin\AdminEvents;
  */
 if (!is_cli())
 {
-    SystemEvents::onPreSystem(function() {
+    Events::on('pre_system', function() {
+
     	while (ob_get_level() > 0)
     	{
     		ob_end_flush();
@@ -41,21 +44,57 @@ if (!is_cli())
     	 */
     	if (ENVIRONMENT !== 'production')
     	{
-    		SystemEvents::onDbQuery('CodeIgniter\Debug\Toolbar\Collectors\Database::collect');
-    		Services::toolbar()->respond();
+            Events::on('DBQuery', 'CodeIgniter\Debug\Toolbar\Collectors\Database::collect');
+    		
+            Services::toolbar()->respond();
     	}
+
     });
 }
 
 SystemEvents::onPreSystem(function() {
 
-    require APPPATH . 'ThirdParty' . DIRECTORY_SEPARATOR . 'bootstrap.php';
+    require APPPATH . 'ThirdParty/bootstrap.php';
 
 });
 
-AdminEvents::onRegisterAssets(function($event) {
+if (class_exists(SiteEvents::class))
+{
+    SiteEvents::onSeed(function($created) {
 
-    \BasicApp\TinyMceJs\Assets::register($event->head, $event->beginBody, $event->endBody);
-    \BasicApp\CodeMirrorJs\Assets::register($event->head, $event->beginBody, $event->endBody);
+        if ($created)
+        {
+            \BasicApp\Site\Models\PageModel::getPage('about', true, [
+                'page_name' => 'About',
+                'page_text' => '<p>About page text.</p>',
+                'page_published' => 1
+            ]);
 
-});
+            $mainMenu = \BasicApp\Site\Models\MenuModel::getMenu('main', false);
+
+            if ($mainMenu)
+            {
+                \BasicApp\Site\Models\MenuItemModel::getEntity(
+                    ['item_menu_id' => $mainMenu->menu_id, 'item_url' => '/page/about'], 
+                    true, 
+                    [
+                        'item_name' => 'About',
+                        'item_enabled' => 1,
+                        'item_sort' => 10
+                    ]
+                );
+            }
+        }
+
+    });
+}
+
+if (class_exists(AdminEvents::class))
+{
+    AdminEvents::onRegisterAssets(function($event) {
+
+        \BasicApp\TinyMceJs\Assets::register($event->head, $event->beginBody, $event->endBody);
+        \BasicApp\CodeMirrorJs\Assets::register($event->head, $event->beginBody, $event->endBody);
+
+    });
+}
