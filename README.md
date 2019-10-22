@@ -13,11 +13,20 @@ Run commands:
 ```
 php spark migrate -all
 php spark ba:update
+php spark ba:seed (Optional)
 ```
 
-After each installation of a new module, you need to run the `php spark ba:update` command.
+You need to run the `ba:update` command after each installation of a new module.
 
-If you want to populate the database with demodata, run the `php spark ba:seed` command after each installation of a new module.
+```
+php spark ba:update
+```
+
+If you want to populate the database with demodata, run the `ba:seed` command after each installation of a new module.
+
+```
+php spark ba:seed
+```
 
 ## Server Requirements
 

@@ -1,7 +1,7 @@
 {
     "name": "basic-app/appstarter",
     "type": "project",
-    "description": "Basic App",
+    "description": "Basic App Minimal",
     "homepage": "http://basic-app.com",
     "license": "MIT",
     "minimum-stability": "dev",
@@ -10,13 +10,10 @@
         "php": ">=7.2",
         "codeigniter4/framework": "*",
         "basic-app/system": "*",
-        "basic-app/module-blog": "dev-master",
-        "basic-app/admin": "dev-master",
-        "basic-app/theme-cool-admin": "dev-master",
-        "basic-app/theme-clean-blog": "dev-master",
-        "basic-app/module-site": "dev-master",
-        "basic-app/js-tinymce": "dev-master",
-        "basic-app/js-codemirror": "dev-master"
+        "basic-app/admin": "*",
+        "basic-app/theme-cool-admin": "*",
+        "basic-app/theme-clean-blog": "*",
+        "basic-app/module-site": "*"
     },
     "require-dev": {
         "mikey179/vfsstream": "1.6.*",
@@ -43,6 +40,9 @@
                 }
             ]
         }
+    },
+    "config": {
+        "process-timeout": 1800
     },
     "repositories": [
         {
