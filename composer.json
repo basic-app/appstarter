@@ -12,7 +12,7 @@
         "basic-app/system": "*",
         "basic-app/admin": "*",
         "basic-app/theme-cool-admin": "*",
-        "basic-app/theme-clean-blog": "*",
+        "basic-app/theme-bootstrap4": "*",
         "basic-app/module-site": "*",
         "basic-app/js-tinymce": "*",
         "basic-app/js-codemirror": "*"
