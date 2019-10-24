@@ -32,9 +32,9 @@ app.baseURL = 'appstarter.localhost'
 app.indexPage = ''
 # app.forceGlobalSecureRequests = false
 
-# app.sessionDriver = 'CodeIgniter\Session\Handlers\FileHandler'
+app.sessionDriver = 'CodeIgniter\Session\Handlers\DatabaseHandler'
 # app.sessionCookieName = 'ci_session'
-# app.sessionSavePath = NULL
+app.sessionSavePath = sessions
 # app.sessionMatchIP = false
 # app.sessionTimeToUpdate = 300
 # app.sessionRegenerateDestroy = false
