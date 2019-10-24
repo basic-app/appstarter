@@ -170,12 +170,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/basic-app/module-config.git",
-                "reference": "75862ce7b36061b1692d8ee8f9a80def2e5ed1f0"
+                "reference": "cd85a09678db9147c6aa5821a0900ec886e2dc39"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/basic-app/module-config/zipball/75862ce7b36061b1692d8ee8f9a80def2e5ed1f0",
-                "reference": "75862ce7b36061b1692d8ee8f9a80def2e5ed1f0",
+                "url": "https://api.github.com/repos/basic-app/module-config/zipball/cd85a09678db9147c6aa5821a0900ec886e2dc39",
+                "reference": "cd85a09678db9147c6aa5821a0900ec886e2dc39",
                 "shasum": ""
             },
             "type": "library",
@@ -188,7 +188,7 @@
             "license": [
                 "MIT"
             ],
-            "time": "2019-10-23T13:25:33+00:00"
+            "time": "2019-10-24T07:42:58+00:00"
         },
         {
             "name": "basic-app/module-i18n",
@@ -196,12 +196,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/basic-app/module-i18n.git",
-                "reference": "d223983b27364a7178f8392f8140de413de488d3"
+                "reference": "94f85c84f8db3c4c22252d76988499af6223ccee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/basic-app/module-i18n/zipball/d223983b27364a7178f8392f8140de413de488d3",
-                "reference": "d223983b27364a7178f8392f8140de413de488d3",
+                "url": "https://api.github.com/repos/basic-app/module-i18n/zipball/94f85c84f8db3c4c22252d76988499af6223ccee",
+                "reference": "94f85c84f8db3c4c22252d76988499af6223ccee",
                 "shasum": ""
             },
             "type": "library",
@@ -214,7 +214,7 @@
             "license": [
                 "MIT"
             ],
-            "time": "2019-10-23T13:27:18+00:00"
+            "time": "2019-10-24T07:27:56+00:00"
         },
         {
             "name": "basic-app/module-site",
@@ -222,12 +222,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/basic-app/module-site.git",
-                "reference": "d8ba3c3bf99e7d3e2b0e4643f9c358ba6194a78e"
+                "reference": "1bc81aecc099adb33a3e1f5201ed2a29f7049475"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/basic-app/module-site/zipball/d8ba3c3bf99e7d3e2b0e4643f9c358ba6194a78e",
-                "reference": "d8ba3c3bf99e7d3e2b0e4643f9c358ba6194a78e",
+                "url": "https://api.github.com/repos/basic-app/module-site/zipball/1bc81aecc099adb33a3e1f5201ed2a29f7049475",
+                "reference": "1bc81aecc099adb33a3e1f5201ed2a29f7049475",
                 "shasum": ""
             },
             "type": "library",
@@ -240,7 +240,7 @@
             "license": [
                 "MIT"
             ],
-            "time": "2019-10-23T13:28:27+00:00"
+            "time": "2019-10-24T07:28:19+00:00"
         },
         {
             "name": "basic-app/system",
@@ -279,12 +279,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/basic-app/theme.git",
-                "reference": "575de5c6a20288b47ddc269f9beca729facd884d"
+                "reference": "57c851993a56cec10b31be92b083d15e5c8f6945"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/basic-app/theme/zipball/575de5c6a20288b47ddc269f9beca729facd884d",
-                "reference": "575de5c6a20288b47ddc269f9beca729facd884d",
+                "url": "https://api.github.com/repos/basic-app/theme/zipball/57c851993a56cec10b31be92b083d15e5c8f6945",
+                "reference": "57c851993a56cec10b31be92b083d15e5c8f6945",
                 "shasum": ""
             },
             "require": {
@@ -304,7 +304,7 @@
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
-            "time": "2019-10-23T13:29:44+00:00"
+            "time": "2019-10-24T07:28:57+00:00"
         },
         {
             "name": "basic-app/theme-bootstrap4",
