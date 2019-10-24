@@ -15,8 +15,7 @@
         "basic-app/theme-bootstrap4": "*",
         "basic-app/module-site": "*",
         "basic-app/js-tinymce": "*",
-        "basic-app/js-codemirror": "*",
-        "basic-app/module-blog": "dev-master"
+        "basic-app/js-codemirror": "*"
     },
     "require-dev": {
         "mikey179/vfsstream": "1.6.*",
