@@ -75,6 +75,7 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 
+//$routes->add('/', 'BasicApp\Site\Controllers\Page::view');
 $routes->add('admin', 'BasicApp\Admin\Controllers\Dashboard::index');
 
 /**
