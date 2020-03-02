@@ -22,7 +22,7 @@ CI_ENVIRONMENT = development
 # APP
 #--------------------------------------------------------------------
 
-app.baseURL = 'appstarter.localhost'
+app.baseURL = 'http://appstarter.localhost'
 app.indexPage = ''
 # app.forceGlobalSecureRequests = false
 
