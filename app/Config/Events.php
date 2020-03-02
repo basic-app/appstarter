@@ -4,7 +4,6 @@ namespace Config;
 
 use CodeIgniter\Events\Events;
 use BasicApp\System\SystemEvents;
-use BasicApp\Site\SiteEvents;
 use BasicApp\Admin\AdminEvents;
 
 /*
@@ -57,37 +56,6 @@ SystemEvents::onPreSystem(function() {
     require APPPATH . 'ThirdParty/bootstrap.php';
 
 });
-
-if (class_exists(SiteEvents::class))
-{
-    SiteEvents::onSeed(function($created) {
-
-        if ($created)
-        {
-            \BasicApp\Site\Models\PageModel::getPage('about', true, [
-                'page_name' => 'About',
-                'page_text' => '<p>About page text.</p>',
-                'page_published' => 1
-            ]);
-
-            $mainMenu = \BasicApp\Site\Models\MenuModel::getMenu('main', false);
-
-            if ($mainMenu)
-            {
-                \BasicApp\Site\Models\MenuItemModel::getEntity(
-                    ['item_menu_id' => $mainMenu->menu_id, 'item_url' => '/page/about'], 
-                    true, 
-                    [
-                        'item_name' => 'About',
-                        'item_enabled' => 1,
-                        'item_sort' => 10
-                    ]
-                );
-            }
-        }
-
-    });
-}
 
 if (class_exists(AdminEvents::class))
 {
