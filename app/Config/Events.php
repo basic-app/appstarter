@@ -24,8 +24,8 @@ use BasicApp\Admin\AdminEvents;
  */
 if (!is_cli())
 {
-    Events::on('pre_system', function() {
-
+    Events::on('pre_system', function()
+    {
     	while (ob_get_level() > 0)
     	{
     		ob_end_flush();
@@ -47,22 +47,19 @@ if (!is_cli())
     		
             Services::toolbar()->respond();
     	}
-
     });
 }
 
-SystemEvents::onPreSystem(function() {
-
+SystemEvents::onPreSystem(function()
+{
     require APPPATH . 'ThirdParty/bootstrap.php';
-
 });
 
 if (class_exists(AdminEvents::class))
 {
-    AdminEvents::onRegisterAssets(function($event) {
-
-        \BasicApp\TinyMceJs\Assets::register($event->head, $event->beginBody, $event->endBody);
-        \BasicApp\CodeMirrorJs\Assets::register($event->head, $event->beginBody, $event->endBody);
-
+    AdminEvents::onRegisterAssets(function(\BasicApp\Admin\Events\AdminRegisterAssetsEvent $event)
+    {
+        \BasicApp\Js\TinyMce\TinyMceAsset::register($event->head, $event->beginBody, $event->endBody);
+        \BasicApp\Js\CodeMirror\CodeMirrorAsset::register($event->head, $event->beginBody, $event->endBody);
     });
 }
