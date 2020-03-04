@@ -44,12 +44,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/basic-app/core.git",
-                "reference": "45d99dc68fea146062c16f43c8c200ffe97aa3e7"
+                "reference": "8f284fba45564d73445a368a8978ed05db93cf55"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/basic-app/core/zipball/45d99dc68fea146062c16f43c8c200ffe97aa3e7",
-                "reference": "45d99dc68fea146062c16f43c8c200ffe97aa3e7",
+                "url": "https://api.github.com/repos/basic-app/core/zipball/8f284fba45564d73445a368a8978ed05db93cf55",
+                "reference": "8f284fba45564d73445a368a8978ed05db93cf55",
                 "shasum": ""
             },
             "require": {
@@ -84,7 +84,7 @@
             "license": [
                 "MIT"
             ],
-            "time": "2020-03-04T07:30:21+00:00"
+            "time": "2020-03-04T20:32:47+00:00"
         },
         {
             "name": "basic-app/crud",
@@ -150,12 +150,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/basic-app/js-tinymce.git",
-                "reference": "4bb77a5a9f3d30261bdc75fe252af50ace84da1b"
+                "reference": "653f443aed1c10e3134288b8888a6b63cfe1dbc5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/basic-app/js-tinymce/zipball/4bb77a5a9f3d30261bdc75fe252af50ace84da1b",
-                "reference": "4bb77a5a9f3d30261bdc75fe252af50ace84da1b",
+                "url": "https://api.github.com/repos/basic-app/js-tinymce/zipball/653f443aed1c10e3134288b8888a6b63cfe1dbc5",
+                "reference": "653f443aed1c10e3134288b8888a6b63cfe1dbc5",
                 "shasum": ""
             },
             "require": {
@@ -171,7 +171,7 @@
             "license": [
                 "MIT"
             ],
-            "time": "2020-03-04T20:24:27+00:00"
+            "time": "2020-03-04T20:39:23+00:00"
         },
         {
             "name": "basic-app/module-configs",
