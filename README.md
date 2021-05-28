@@ -1,36 +1,22 @@
-# Basic App Minimal
+# Basic App
 
-## Installation
+#### CodeIgniter 4 Application Starter
 
-`composer create-project basic-app/appstarter --stability=dev --prefer-dist`
- 
+## Installation & updates
+
+`composer create-project basic-app/appstarter --stability=dev --prefer-dist --keep-vcs`
+
 ## Setup
 
-Set common application settings in your `.env` file.
+Copy `env` to `.env` and tailor for your app, specifically the baseURL and any database settings.
 
-Run commands: 
+You should configure your web server to "point" to your project's *public* folder, and not to the project root.
 
-```
-php spark migrate -all
-php spark ba:update
-php spark ba:seed (Optional)
-```
-
-You need to run the `ba:update` command after each installation of a new module.
-
-```
-php spark ba:update
-```
-
-If you want to populate the database with demodata, run the `ba:seed` command after each installation of a new module.
-
-```
-php spark ba:seed
-```
+**Please** read the [CodeIgniter 4 user guide](https://codeigniter.com/user_guide/index.html) for a better explanation of how it works!
 
 ## Server Requirements
 
-PHP version 7.2 or higher is required, with the following extensions installed: 
+PHP version 7.3 or higher is required, with the following extensions installed:
 
 - [intl](http://php.net/manual/en/intl.requirements.php)
 - [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library

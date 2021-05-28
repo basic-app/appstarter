@@ -2,7 +2,10 @@
 
 namespace Config;
 
-class Images extends \BasicApp\System\Config\App\Images
+use CodeIgniter\Images\Handlers\GDHandler;
+use CodeIgniter\Images\Handlers\ImageMagickHandler;
+
+class Images extends \BasicApp\Config\Images
 {
 	/**
 	 * Default handler used if no other handler is specified.
@@ -22,10 +25,10 @@ class Images extends \BasicApp\System\Config\App\Images
 	/**
 	 * The available handler classes.
 	 *
-	 * @var array
+	 * @var array<string, string>
 	 */
 	public $handlers = [
-		'gd'      => \CodeIgniter\Images\Handlers\GDHandler::class,
-		'imagick' => \CodeIgniter\Images\Handlers\ImageMagickHandler::class,
+		'gd'      => GDHandler::class,
+		'imagick' => ImageMagickHandler::class,
 	];
 }

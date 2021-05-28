@@ -2,9 +2,8 @@
 
 namespace Config;
 
-class Email extends \BasicApp\System\Config\App\Email
+class Email extends \BasicApp\Config\Email
 {
-
 	/**
 	 * @var string
 	 */
@@ -14,6 +13,11 @@ class Email extends \BasicApp\System\Config\App\Email
 	 * @var string
 	 */
 	public $fromName;
+
+	/**
+	 * @var string
+	 */
+	public $recipients;
 
 	/**
 	 * The "user agent"

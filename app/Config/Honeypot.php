@@ -2,15 +2,15 @@
 
 namespace Config;
 
-class Honeypot extends \BasicApp\System\Config\App\Honeypot
+class Honeypot extends \BasicApp\Config\Honeypot
 {
-
 	/**
 	 * Makes Honeypot visible or not to human
 	 *
 	 * @var boolean
 	 */
 	public $hidden = true;
+
 	/**
 	 * Honeypot Label Content
 	 *
@@ -31,4 +31,11 @@ class Honeypot extends \BasicApp\System\Config\App\Honeypot
 	 * @var string
 	 */
 	public $template = '<label>{label}</label><input type="text" name="{name}" value=""/>';
+
+	/**
+	 * Honeypot container
+	 *
+	 * @var string
+	 */
+	public $container = '<div style="display:none">{template}</div>';
 }

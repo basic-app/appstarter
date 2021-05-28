@@ -4,21 +4,18 @@ namespace Config;
 
 use Kint\Renderer\Renderer;
 
-class Kint extends \BasicApp\System\Config\App\Kint
+/**
+ * --------------------------------------------------------------------------
+ * Kint
+ * --------------------------------------------------------------------------
+ *
+ * We use Kint's `RichRenderer` and `CLIRenderer`. This area contains options
+ * that you can set to customize how Kint works for you.
+ *
+ * @see https://kint-php.github.io/kint/ for details on these settings.
+ */
+class Kint extends \BasicApp\Config\Kint
 {
-	/*
-	|--------------------------------------------------------------------------
-	| Kint
-	|--------------------------------------------------------------------------
-	|
-	| We use Kint's RichRenderer and CLIRenderer. This area contains options
-	| that you can set to customize how Kint works for you.
-	|
-	| For details on these settings, see Kint's docs:
-	|	https://kint-php.github.io/kint/
-	|
-	*/
-
 	/*
 	|--------------------------------------------------------------------------
 	| Global Settings

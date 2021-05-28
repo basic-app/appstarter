@@ -3,8 +3,7 @@
 namespace Config;
 
 use CodeIgniter\Events\Events;
-use BasicApp\System\SystemEvents;
-use BasicApp\Admin\AdminEvents;
+use CodeIgniter\Exceptions\FrameworkException;
 
 /*
  * --------------------------------------------------------------------
@@ -22,44 +21,36 @@ use BasicApp\Admin\AdminEvents;
  * Example:
  *      Events::on('create', [$myInstance, 'myMethod']);
  */
-if (!is_cli())
-{
-    Events::on('pre_system', function()
-    {
-    	while (ob_get_level() > 0)
-    	{
-    		ob_end_flush();
-    	}
 
-    	ob_start(function ($buffer) {
-    		return $buffer;
-    	});
+Events::on('pre_system', function () {
+	if (ENVIRONMENT !== 'testing')
+	{
+		if (ini_get('zlib.output_compression'))
+		{
+			throw FrameworkException::forEnabledZlibOutputCompression();
+		}
 
-    	/*
-    	 * --------------------------------------------------------------------
-    	 * Debug Toolbar Listeners.
-    	 * --------------------------------------------------------------------
-    	 * If you delete, they will no longer be collected.
-    	 */
-    	if (ENVIRONMENT !== 'production')
-    	{
-            Events::on('DBQuery', 'CodeIgniter\Debug\Toolbar\Collectors\Database::collect');
-    		
-            Services::toolbar()->respond();
-    	}
-    });
-}
+		while (ob_get_level() > 0)
+		{
+			ob_end_flush();
+		}
 
-SystemEvents::onPreSystem(function()
-{
-    require APPPATH . 'ThirdParty/bootstrap.php';
+		ob_start(function ($buffer) {
+			return $buffer;
+		});
+	}
+
+	/*
+	 * --------------------------------------------------------------------
+	 * Debug Toolbar Listeners.
+	 * --------------------------------------------------------------------
+	 * If you delete, they will no longer be collected.
+	 */
+	if (CI_DEBUG && ! is_cli())
+	{
+		Events::on('DBQuery', 'CodeIgniter\Debug\Toolbar\Collectors\Database::collect');
+		Services::toolbar()->respond();
+	}
 });
 
-if (class_exists(AdminEvents::class))
-{
-    AdminEvents::onRegisterAssets(function(\BasicApp\Admin\Events\AdminRegisterAssetsEvent $event)
-    {
-        \BasicApp\Js\TinyMce\TinyMceAsset::register($event->head, $event->beginBody, $event->endBody);
-        \BasicApp\Js\CodeMirror\CodeMirrorAsset::register($event->head, $event->beginBody, $event->endBody);
-    });
-}
+require_once dirname(COMPOSER_PATH) . '/basic-app/config/Events.php';

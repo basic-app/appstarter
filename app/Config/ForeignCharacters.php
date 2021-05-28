@@ -2,7 +2,6 @@
 
 namespace Config;
 
-class ForeignCharacters extends \BasicApp\System\Config\App\ForeignCharacters
+class ForeignCharacters extends \BasicApp\Config\ForeignCharacters
 {
-
 }
