@@ -2,6 +2,8 @@
 
 namespace Config;
 
+use CodeIgniter\Config\BaseService;
+
 /**
  * Services Configuration file.
  *
@@ -15,15 +17,16 @@ namespace Config;
  * method format you should use for your service methods. For more examples,
  * see the core Services file at system/Config/Services.php.
  */
-class Services extends \CodeIgniter\Config\BaseService
+class Services extends BaseService
 {
-	// public static function example($getShared = true)
-	// {
-	//     if ($getShared)
-	//     {
-	//         return static::getSharedInstance('example');
-	//     }
-	//
-	//     return new \CodeIgniter\Example();
-	// }
+    /*
+     * public static function example($getShared = true)
+     * {
+     *     if ($getShared) {
+     *         return static::getSharedInstance('example');
+     *     }
+     *
+     *     return new \CodeIgniter\Example();
+     * }
+     */
 }
