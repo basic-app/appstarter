@@ -11,6 +11,13 @@
     },
     "require": {
         "php": "^8.2",
+        "basic-app/admin-menu": "dev-main",
+        "basic-app/module-block": "dev-master",
+        "basic-app/module-blog": "dev-master",
+        "basic-app/module-menu": "dev-master",
+        "basic-app/module-page": "dev-master",
+        "basic-app/site-theme": "dev-main",
+        "basic-app/site-theme-clean-blog": "dev-main",
         "codeigniter4/framework": "^4.7"
     },
     "require-dev": {
@@ -39,5 +46,7 @@
     },
     "scripts": {
         "test": "phpunit"
-    }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
