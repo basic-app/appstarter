@@ -65,17 +65,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/basic-app/admin.git",
-                "reference": "03a44221e6e70e0c71af9bf4fe244f077d97e00d"
+                "reference": "efa804faa944e42b49e0b96f76cc153d70928323"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/basic-app/admin/zipball/03a44221e6e70e0c71af9bf4fe244f077d97e00d",
-                "reference": "03a44221e6e70e0c71af9bf4fe244f077d97e00d",
+                "url": "https://api.github.com/repos/basic-app/admin/zipball/efa804faa944e42b49e0b96f76cc153d70928323",
+                "reference": "efa804faa944e42b49e0b96f76cc153d70928323",
                 "shasum": ""
             },
             "require": {
                 "basic-app/auth": "dev-main",
-                "basic-app/core": "dev-master"
+                "basic-app/core": "dev-master",
+                "basic-app/fontawesome7": "dev-main"
             },
             "default-branch": true,
             "type": "library",
@@ -92,7 +93,7 @@
                 "issues": "https://github.com/basic-app/admin/issues",
                 "source": "https://github.com/basic-app/admin/tree/master"
             },
-            "time": "2026-09-08T19:17:11+00:00"
+            "time": "2026-09-08T20:24:00+00:00"
         },
         {
             "name": "basic-app/adminlte4",
@@ -100,12 +101,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/basic-app/adminlte4.git",
-                "reference": "220a0894e064f0fc042f5bbdade91a81f583a314"
+                "reference": "0239b285d457d10d9e0e8211bfd42a67d740bfb5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/basic-app/adminlte4/zipball/220a0894e064f0fc042f5bbdade91a81f583a314",
-                "reference": "220a0894e064f0fc042f5bbdade91a81f583a314",
+                "url": "https://api.github.com/repos/basic-app/adminlte4/zipball/0239b285d457d10d9e0e8211bfd42a67d740bfb5",
+                "reference": "0239b285d457d10d9e0e8211bfd42a67d740bfb5",
                 "shasum": ""
             },
             "require": {
@@ -126,7 +127,7 @@
                 "issues": "https://github.com/basic-app/adminlte4/issues",
                 "source": "https://github.com/basic-app/adminlte4/tree/main"
             },
-            "time": "2026-09-08T19:18:48+00:00"
+            "time": "2026-09-08T20:25:15+00:00"
         },
         {
             "name": "basic-app/auth",
@@ -195,6 +196,37 @@
                 "source": "https://github.com/basic-app/core/tree/master"
             },
             "time": "2026-09-07T20:04:50+00:00"
+        },
+        {
+            "name": "basic-app/fontawesome7",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/basic-app/fontawesome7.git",
+                "reference": "95278a80dab7fc920ec942642dd21c446e70ad7b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/basic-app/fontawesome7/zipball/95278a80dab7fc920ec942642dd21c446e70ad7b",
+                "reference": "95278a80dab7fc920ec942642dd21c446e70ad7b",
+                "shasum": ""
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "BasicApp\\Fontawesome7\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "support": {
+                "issues": "https://github.com/basic-app/fontawesome7/issues",
+                "source": "https://github.com/basic-app/fontawesome7/tree/main"
+            },
+            "time": "2026-09-08T20:19:55+00:00"
         },
         {
             "name": "basic-app/jquery3",
