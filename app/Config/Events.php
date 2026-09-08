@@ -5,6 +5,7 @@ namespace Config;
 use CodeIgniter\Events\Events;
 use CodeIgniter\Exceptions\FrameworkException;
 use CodeIgniter\HotReloader\HotReloader;
+use BasicApp\Admin\Events\AdminFooterMenu;
 
 /*
  * --------------------------------------------------------------------
@@ -25,7 +26,9 @@ use CodeIgniter\HotReloader\HotReloader;
 
 Events::on('pre_system', static function (): void {
     if (ENVIRONMENT !== 'testing') {
-        if (ini_get('zlib.output_compression')) {
+        $value = ini_get('zlib.output_compression');
+
+        if (filter_var($value, FILTER_VALIDATE_BOOLEAN) || (int) $value > 0) {
             throw FrameworkException::forEnabledZlibOutputCompression();
         }
 
@@ -52,4 +55,18 @@ Events::on('pre_system', static function (): void {
             });
         }
     }
+});
+
+// Custom events
+AdminFooterMenu::on(static function(AdminFooterMenu $event) : void {
+    $event->setAfterTrigger(function() {
+        $this->items['support'] = [
+            'url' => site_url('admin/support'),
+            'label' => lang('Admin.Support')
+        ];
+        $this->items['credits'] = [
+            'url' => site_url('admin/credits'),
+            'label' => lang('Admin.Credits')
+        ];
+    });
 });

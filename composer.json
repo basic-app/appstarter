@@ -1,29 +1,26 @@
 {
-    "name": "codeigniter4/appstarter",
-    "description": "CodeIgniter4 starter app",
+    "name": "basic-app/appstarter",
+    "description": "Basic App starter app",
     "license": "MIT",
     "type": "project",
-    "homepage": "https://codeigniter.com",
+    "homepage": "https://basic-app.com",
     "support": {
-        "forum": "https://forum.codeigniter.com/",
-        "source": "https://github.com/codeigniter4/CodeIgniter4",
-        "slack": "https://codeigniterchat.slack.com"
+        "forum": "https://forum.codeigniter.com/thread-73103.html",
+        "source": "https://github.com/basic-app/basic-app"
     },
     "require": {
         "php": "^8.2",
-        "basic-app/admin-menu": "dev-main",
-        "basic-app/module-block": "dev-master",
-        "basic-app/module-blog": "dev-master",
-        "basic-app/module-menu": "dev-master",
-        "basic-app/module-page": "dev-master",
-        "basic-app/site-theme": "dev-main",
-        "basic-app/site-theme-clean-blog": "dev-main",
-        "codeigniter4/framework": "^4.7"
+        "codeigniter4/framework": "^4.7",        
+        "basic-app/admin": "dev-master",
+        "basic-app/adminlte4": "dev-main",
+        "basic-app/jquery3": "dev-main",
+        "basic-app/lightbox2": "dev-main"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9",
         "mikey179/vfsstream": "^1.6",
-        "phpunit/phpunit": "^10.5.16"
+        "phpunit/phpunit": "^10.5.16",
+        "codeigniter4/translations" : "*"
     },
     "autoload": {
         "psr-4": {
@@ -40,13 +37,44 @@
         }
     },
     "config": {
-        "optimize-autoloader": true,
+        "optimize-autoloader": false,
         "preferred-install": "dist",
-        "sort-packages": true
+        "sort-packages": false
     },
-    "scripts": {
-        "test": "phpunit"
+    "extra": {
+        "BasicApp\\Core\\Composer::postCreateProject": {
+            "copy": [
+                {
+                    "env": ".env",
+                    "environment/public/robots.txt": "public/robots.txt",
+                    "environment/public/favicon.ico": "public/favicon.ico"                    
+                }
+            ],
+            "setPermission": [
+                {
+                    "writable/cache": "0755",
+                    "writable/debugbar": "0755",
+                    "writable/logs": "0755",
+                    "writable/session": "0755",
+                    "writable/uploads": "0755"
+                }
+            ]
+        }
     },
     "minimum-stability": "dev",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "scripts": {
+        "test": "phpunit",
+        "post-create-project-cmd": [
+            "BasicApp\\Core\\Composer::postCreateProject"
+        ],
+        "post-install-cmd": [
+            "@composer dump-autoload",
+            "BasicApp\\Core\\Composer::postInstall"
+        ],
+        "post-update-cmd": [
+            "@composer dump-autoload",
+            "BasicApp\\Core\\Composer::postUpdate"
+        ]
+    }
 }

@@ -22,7 +22,7 @@ CI_ENVIRONMENT = development
 # APP
 #--------------------------------------------------------------------
 
-# app.baseURL = 'http://localhost:8080'
+app.baseURL = 'http://localhost:8080'
 # If you have trouble with `.`, you could also use `_`.
 # app_baseURL = ''
 # app.forceGlobalSecureRequests = false
@@ -33,7 +33,7 @@ CI_ENVIRONMENT = development
 #--------------------------------------------------------------------
 
 database.default.hostname = localhost
-database.default.database = appstarter
+database.default.database = basic-app
 database.default.username = root
 database.default.password = 
 database.default.DBDriver = MySQLi
@@ -61,11 +61,17 @@ database.default.port = 3306
 # SESSION
 #--------------------------------------------------------------------
 
-# session.driver = 'CodeIgniter\Session\Handlers\FileHandler'
-# session.savePath = null
+session.driver = 'CodeIgniter\Session\Handlers\DatabaseHandler'
+session.savePath = 'ci_sessions'
 
 #--------------------------------------------------------------------
 # LOGGER
 #--------------------------------------------------------------------
 
 # logger.threshold = 4
+
+#--------------------------------------------------------------------
+# Email
+#--------------------------------------------------------------------
+email.fromEmail = no-reply@example.org
+email.fromName = "Robot"
